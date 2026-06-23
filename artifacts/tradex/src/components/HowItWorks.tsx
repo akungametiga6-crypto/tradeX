@@ -6,7 +6,7 @@ const steps = [
     icon: Wallet,
     num: "01",
     title: "Connect your wallet",
-    detail: "Non-custodial. TradeX never holds your keys. Phantom, Backpack, Solflare — any Solana wallet connects in one click.",
+    detail: "Non-custodial. tradexeasy never holds your keys. Phantom, Backpack, Solflare — any Solana wallet connects in one click.",
     terminal: "> wallet.connect({ provider: 'phantom' })\n✓ Connected: 7xKp...f3Wd\n✓ Balance: 12.4 SOL",
   },
   {
@@ -20,14 +20,14 @@ const steps = [
     icon: Route,
     num: "03",
     title: "Preview your route",
-    detail: "TradeX simulates the split across every pool and shows you exact output before you sign. No surprise slippage.",
+    detail: "tradexeasy simulates the split across every pool and shows you exact output before you sign. No surprise slippage.",
     terminal: "> route.preview({ in: '100 SOL' })\n  → Orca    42%  out: 2,877.2 USDC\n  → Jupiter 33%  out: 2,253.0 USDC\n  → Raydium 25%  out: 1,711.2 USDC\n  total: 6,841.4 USDC  slippage: 0.03%",
   },
   {
     icon: CheckCircle2,
     num: "04",
     title: "Sign once, confirmed on-chain",
-    detail: "One wallet signature. TradeX bundles the full split route into a single transaction. Average confirmation: 400ms.",
+    detail: "One wallet signature. tradexeasy bundles the full split route into a single transaction. Average confirmation: 400ms.",
     terminal: "> tx.send(bundle)\n  sig: 5tYm...nX9k\n  slot: 338,241,904\n✓ Confirmed in 412ms",
   },
 ];
@@ -47,7 +47,7 @@ export default function HowItWorks() {
               Your first trade<br />in under 60s.
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Four steps. One wallet signature. The rest is TradeX routing your capital to the best available price across the entire Solana DEX ecosystem.
+              Four steps. One wallet signature. The rest is tradexeasy routing your capital to the best available price across the entire Solana DEX ecosystem.
             </p>
             <div className="flex items-center gap-3 text-sm text-muted-foreground border border-border/50 bg-card rounded-xl px-4 py-3 w-fit">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
