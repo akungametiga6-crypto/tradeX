@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowLeft, TrendingUp, TrendingDown, RefreshCw, Trophy, Zap, Clock, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoPath from "@/assets/tradex-logo.jpg";
+import logoPath from "@/assets/tradexeasy-logo.png";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 interface Candle {
