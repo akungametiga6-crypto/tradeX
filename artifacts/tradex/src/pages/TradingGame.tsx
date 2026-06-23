@@ -364,9 +364,9 @@ export default function TradingGame() {
               </Button>
             </Link>
             <div className="flex items-center gap-2">
-              <img src={logoPath} alt="TradeX" className="h-7 w-7 object-contain" />
+              <img src={logoPath} alt="tradexeasy" className="h-7 w-auto object-contain" />
               <span className="font-bold text-sm bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                TRADEX GAME
+                tradexeasy GAME
               </span>
             </div>
           </div>
