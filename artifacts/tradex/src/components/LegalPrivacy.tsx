@@ -4,7 +4,7 @@ export default function LegalPrivacy() {
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="mb-12">
           <h2 className="text-3xl font-bold mb-4">Legal & Privacy</h2>
-          <p className="text-muted-foreground">Please read carefully before using TradeX.</p>
+          <p className="text-muted-foreground">Please read carefully before using tradexeasy.</p>
         </div>
 
         <div className="space-y-12 text-sm text-muted-foreground leading-relaxed prose prose-invert max-w-none">
@@ -12,10 +12,10 @@ export default function LegalPrivacy() {
           <div>
             <h3 className="text-xl font-bold text-foreground mb-4">Terms of Service</h3>
             <p className="mb-4">
-              TradeX provides informational data, charting tools, and routing interfaces only. We do not provide financial, investment, legal, or tax advice. Any trading decisions made using our platform are solely your responsibility.
+              tradexeasy provides informational data, charting tools, and routing interfaces only. We do not provide financial, investment, legal, or tax advice. Any trading decisions made using our platform are solely your responsibility.
             </p>
             <p>
-              Users trade at their own risk. There is no guarantee of profits. The platform is provided "as is" without warranties of any kind. TradeX and its operators are not responsible for any financial losses, data inaccuracies, or execution failures incurred while using the service.
+              Users trade at their own risk. There is no guarantee of profits. The platform is provided "as is" without warranties of any kind. tradexeasy and its operators are not responsible for any financial losses, data inaccuracies, or execution failures incurred while using the service.
             </p>
           </div>
 
