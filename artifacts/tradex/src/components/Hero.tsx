@@ -10,10 +10,14 @@ const CHART_BARS = Array.from({ length: 40 }, (_, i) => ({
 export default function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center pt-[116px] overflow-hidden" id="home">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[100px] pointer-events-none" />
+      {/* Ambient glow — contained, responsive */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(600px,90vw)] h-[min(600px,90vw)] bg-primary/8 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[min(400px,60vw)] h-[min(400px,60vw)] bg-secondary/7 rounded-full blur-[80px] pointer-events-none" />
+      {/* Bottom fade so glow doesn't bleed into next section */}
+      <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-background to-transparent pointer-events-none z-10" />
 
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+      {/* Grid — lighter on mobile, visible on desktop */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px] md:bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_20%,#000_60%,transparent_100%)] pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10 flex flex-col items-center text-center">
         <motion.div
