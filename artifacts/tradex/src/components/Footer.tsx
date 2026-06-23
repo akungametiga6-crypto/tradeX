@@ -98,7 +98,7 @@ export default function Footer() {
         {/* Legal row */}
         <div className="border-t border-border/50 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            &copy; 2026 TradeX. All rights reserved. Trading crypto involves significant risk.
+            &copy; 2026 tradexeasy. All rights reserved. Trading crypto involves significant risk.
           </p>
           <div className="flex items-center gap-4 text-xs text-muted-foreground">
             <a href="#legal" className="hover:text-primary transition-colors">Terms</a>
