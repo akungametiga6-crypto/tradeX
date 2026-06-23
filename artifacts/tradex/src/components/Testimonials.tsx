@@ -21,7 +21,7 @@ const others = [
     statLabel: "position managed hands-free",
   },
   {
-    quote: "Sub-100ms feeds actually matter when you're fading big prints. I tested it side-by-side against two other tools. TradeX was first every time.",
+    quote: "Sub-100ms feeds actually matter when you're fading big prints. I tested it side-by-side against two other tools. tradexeasy was first every time.",
     name: "Kaito",
     handle: "@kaito_degen",
     role: "Full-time trader · 4y",
