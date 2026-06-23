@@ -3,12 +3,37 @@ import { TrendingUp, TrendingDown } from "lucide-react";
 
 type PriceEntry = { symbol: string; price: number; change24h: number };
 
-const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
+const COIN_IDS = "bitcoin,ethereum,solana,binancecoin,ripple,dogecoin,avalanche-2,polygon-ecosystem-token";
+const SYMBOL_MAP: Record<string, string> = {
+  bitcoin: "BTC",
+  ethereum: "ETH",
+  solana: "SOL",
+  binancecoin: "BNB",
+  ripple: "XRP",
+  dogecoin: "DOGE",
+  "avalanche-2": "AVAX",
+  "polygon-ecosystem-token": "POL",
+};
 
 async function fetchPrices(): Promise<PriceEntry[]> {
-  const res = await fetch(`${BASE}/api/prices`);
-  if (!res.ok) throw new Error("Failed to fetch prices");
-  return res.json();
+  // Try the API proxy first (works on Replit), fall back to CoinGecko directly (GitHub Pages)
+  const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
+  try {
+    const res = await fetch(`${BASE}/api/prices`, { signal: AbortSignal.timeout(5000) });
+    if (res.ok) return res.json();
+  } catch { /* fallthrough */ }
+
+  const url = `https://api.coingecko.com/api/v3/simple/price?ids=${COIN_IDS}&vs_currencies=usd&include_24hr_change=true`;
+  const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
+  if (!res.ok) throw new Error("Failed to fetch prices from CoinGecko");
+  const data = await res.json() as Record<string, { usd: number; usd_24h_change?: number }>;
+  return Object.entries(data)
+    .map(([id, d]) => ({
+      symbol: SYMBOL_MAP[id] ?? id.toUpperCase(),
+      price: d.usd,
+      change24h: Number((d.usd_24h_change ?? 0).toFixed(2)),
+    }))
+    .filter((e) => e.price > 0);
 }
 
 function fmt(price: number): string {
@@ -36,8 +61,8 @@ export default function PriceTicker() {
   const { data, isError } = useQuery<PriceEntry[]>({
     queryKey: ["prices"],
     queryFn: fetchPrices,
-    refetchInterval: 15_000,
-    staleTime: 14_000,
+    refetchInterval: 30_000,
+    staleTime: 25_000,
     retry: 2,
   });
 
@@ -45,24 +70,19 @@ export default function PriceTicker() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 h-9 bg-background/95 backdrop-blur-md border-b border-border/40 overflow-hidden flex items-center">
-      {/* Left gradient fade */}
       <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-      {/* Right gradient fade */}
       <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
-      {/* Label */}
       <div className="absolute left-4 z-20 flex items-center gap-1.5">
-        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+        <span className={`w-1.5 h-1.5 rounded-full ${isError ? "bg-red-400" : "bg-emerald-400 animate-pulse"}`} />
         <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Live</span>
       </div>
 
-      {/* Scrolling track */}
       <div className="pl-20 overflow-hidden w-full">
-        {isError || !coins ? (
+        {!coins ? (
           <span className="text-xs text-muted-foreground pl-4">Fetching live prices…</span>
         ) : (
           <div className="flex whitespace-nowrap animate-ticker will-change-transform">
-            {/* Duplicate 4× for seamless loop */}
             {[...coins, ...coins, ...coins, ...coins].map((entry, i) => (
               <Coin key={`${entry.symbol}-${i}`} entry={entry} />
             ))}

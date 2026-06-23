@@ -28,12 +28,24 @@ const POLL_INTERVAL = 8000; // ms
 const SOL_MINT = "So11111111111111111111111111111111111111112";
 
 async function fetchSolPrice(): Promise<number | null> {
+  // Try API proxy first (Replit), fall back to CoinGecko directly (GitHub Pages / offline API)
   try {
     const base = import.meta.env.BASE_URL?.replace(/\/$/, "") ?? "";
-    const res = await fetch(`${base}/api/sol-price`, { signal: AbortSignal.timeout(8000) });
-    if (!res.ok) throw new Error(`API ${res.status}`);
-    const json = await res.json() as { price: number };
-    return json.price ?? null;
+    const res = await fetch(`${base}/api/sol-price`, { signal: AbortSignal.timeout(5000) });
+    if (res.ok) {
+      const json = await res.json() as { price: number };
+      return json.price ?? null;
+    }
+  } catch { /* fallthrough */ }
+
+  try {
+    const res = await fetch(
+      "https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd",
+      { signal: AbortSignal.timeout(8000) }
+    );
+    if (!res.ok) return null;
+    const data = await res.json() as { solana?: { usd: number } };
+    return data.solana?.usd ?? null;
   } catch {
     return null;
   }
