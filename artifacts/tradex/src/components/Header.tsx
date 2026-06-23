@@ -4,7 +4,7 @@ import { SiX } from "react-icons/si";
 import { Menu, X, Wallet, Rocket } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import logoPath from "@/assets/tradex-logo.jpg";
+import logoPath from "@/assets/tradexeasy-logo.png";
 
 const navLinks = [
   { name: "Home", href: "#" },
@@ -46,15 +46,12 @@ export default function Header() {
       >
         <div className="container mx-auto px-4 h-20 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group" onClick={closeMenu}>
+          <Link href="/" className="flex items-center group" onClick={closeMenu}>
             <img
               src={logoPath}
-              alt="TradeX Logo"
-              className="h-10 w-10 object-contain rounded-full group-hover:scale-105 transition-transform ring-1 ring-primary/30"
+              alt="tradexeasy Logo"
+              className="h-10 w-auto object-contain group-hover:scale-105 transition-transform"
             />
-            <span className="font-display font-bold text-xl tracking-tight bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              TRADEX
-            </span>
           </Link>
 
           {/* Desktop nav */}
