@@ -105,7 +105,7 @@ export default function SupportedChains() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">One Terminal. Every Chain.</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            TradeX aggregates liquidity across every major network — switch chains in one click, no wallet reconfig needed.
+            tradexeasy aggregates liquidity across every major network — switch chains in one click, no wallet reconfig needed.
           </p>
         </div>
 
