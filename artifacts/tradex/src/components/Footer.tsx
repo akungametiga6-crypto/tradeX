@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { SiX, SiSolana, SiEthereum, SiBinance, SiPolygon } from "react-icons/si";
 import { ExternalLink, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoPath from "@/assets/tradex-logo.jpg";
+import logoPath from "@/assets/tradexeasy-logo.png";
 
 const blockchains = [
   { name: "Solana", icon: SiSolana, color: "text-[#14F195]", website: "https://solana.com", x: "https://x.com/solana", xHandle: "@solana" },
@@ -23,11 +23,8 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="md:col-span-4">
-            <Link href="/" className="flex items-center gap-3 mb-5">
-              <img src={logoPath} alt="TradeX Logo" className="h-9 w-9 object-contain rounded-full ring-1 ring-primary/30" />
-              <span className="font-display font-bold text-lg tracking-tight bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                TRADEX
-              </span>
+            <Link href="/" className="flex items-center mb-5">
+              <img src={logoPath} alt="tradexeasy Logo" className="h-9 w-auto object-contain" />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
               Trade Smart. Grow Fast. Platform intelijen multi-chain untuk trader crypto serius — tanpa batasan, tanpa kompromi.
