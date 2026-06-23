@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { SiX, SiSolana, SiEthereum, SiBinance, SiPolygon } from "react-icons/si";
 import { ExternalLink, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoPath from "@/assets/tradexeasy-logo-full.jpg";
+import logoPath from "@/assets/tradexeasy-logo-full.png";
 
 const blockchains = [
   { name: "Solana", icon: SiSolana, color: "text-[#14F195]", website: "https://solana.com", x: "https://x.com/solana", xHandle: "@solana" },
@@ -30,10 +30,10 @@ export default function Footer() {
             </p>
 
             <div className="flex flex-col gap-2">
-              <a href="https://x.com/TradeXeasy" target="_blank" rel="noopener noreferrer">
+              <a href="https://x.com/Tradexesy" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" size="sm" className="w-full border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2 justify-start" data-testid="link-footer-founder-x">
                   <SiX className="w-3.5 h-3.5 flex-shrink-0" />
-                  <span>@TradeXeasy</span>
+                  <span>@Tradexesy</span>
                 </Button>
               </a>
               <a href="https://kickstart.easya.io/" target="_blank" rel="noopener noreferrer">

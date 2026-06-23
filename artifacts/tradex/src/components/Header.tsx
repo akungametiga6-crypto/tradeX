@@ -4,7 +4,7 @@ import { SiX } from "react-icons/si";
 import { Menu, X, Wallet, Rocket } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import logoPath from "@/assets/tradexeasy-logo-full.jpg";
+import logoPath from "@/assets/tradexeasy-logo-full.png";
 
 const navLinks = [
   { name: "Home", href: "#" },
@@ -76,10 +76,10 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-2">
-            <a href="https://x.com/TradeXeasy" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com/Tradexesy" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="sm" className="border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2" data-testid="button-follow-x">
                 <SiX className="w-4 h-4" />
-                <span>@TradeXeasy</span>
+                <span>@Tradexesy</span>
               </Button>
             </a>
             <a href="https://jup.ag/" target="_blank" rel="noopener noreferrer">
@@ -167,7 +167,7 @@ export default function Header() {
               <div className="border-t border-border/40 mx-4" />
 
               <div className="container mx-auto px-4 py-4 flex flex-col gap-2">
-                <a href="https://x.com/TradeXeasy" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
+                <a href="https://x.com/Tradexesy" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
                   <Button variant="outline" className="w-full border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2 justify-center" data-testid="button-follow-x-mobile">
                     <SiX className="w-4 h-4" />
                     @TradeXeasy on X
