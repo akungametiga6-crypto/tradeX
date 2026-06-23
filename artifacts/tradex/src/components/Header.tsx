@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { SiX } from "react-icons/si";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Wallet, Rocket } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import logoPath from "@assets/a87c8240-7053-4b07-97aa-3f1afaec6e84_1782194174325.png";
+import logoPath from "@/assets/tradex-logo.jpg";
 
 const navLinks = [
   { name: "Home", href: "#" },
@@ -28,7 +28,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [menuOpen]);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
@@ -39,7 +38,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-9 left-0 right-0 z-40 transition-all duration-300 border-b ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
           scrolled || menuOpen
             ? "bg-background/95 backdrop-blur-md border-border/50 shadow-sm"
             : "bg-transparent border-transparent"
@@ -51,7 +50,7 @@ export default function Header() {
             <img
               src={logoPath}
               alt="TradeX Logo"
-              className="h-10 w-10 object-contain group-hover:scale-105 transition-transform"
+              className="h-10 w-10 object-contain rounded-full group-hover:scale-105 transition-transform ring-1 ring-primary/30"
             />
             <span className="font-display font-bold text-xl tracking-tight bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               TRADEX
@@ -82,21 +81,22 @@ export default function Header() {
           </nav>
 
           {/* Desktop CTAs */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-2">
             <a href="https://x.com/TradeXeasy" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="sm" className="border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2" data-testid="button-follow-x">
                 <SiX className="w-4 h-4" />
-                <span>Follow Founder</span>
+                <span>@TradeXeasy</span>
               </Button>
             </a>
             <a href="https://jup.ag/" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="sm" className="border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2" data-testid="button-wallet">
-                <img src="https://jup.ag/favicon.ico" alt="Jupiter" className="w-4 h-4 rounded-full" />
-                <span>Wallet</span>
+                <Wallet className="w-4 h-4" />
+                <span>Jupiter</span>
               </Button>
             </a>
             <a href="https://kickstart.easya.io/" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 box-glow-primary" data-testid="button-launch-app">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 box-glow-primary gap-2" data-testid="button-launch-app">
+                <Rocket className="w-4 h-4" />
                 Launch App
               </Button>
             </a>
@@ -125,7 +125,6 @@ export default function Header() {
       <AnimatePresence>
         {menuOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               key="backdrop"
               initial={{ opacity: 0 }}
@@ -136,16 +135,14 @@ export default function Header() {
               onClick={closeMenu}
             />
 
-            {/* Slide-down drawer */}
             <motion.div
               key="drawer"
               initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.22, ease: "easeOut" }}
-              className="fixed top-[116px] left-0 right-0 z-40 md:hidden bg-background/97 backdrop-blur-md border-b border-border/50 shadow-xl"
+              className="fixed top-20 left-0 right-0 z-40 md:hidden bg-background/97 backdrop-blur-md border-b border-border/50 shadow-xl"
             >
-              {/* Nav links */}
               <nav className="container mx-auto px-4 py-4 flex flex-col gap-1">
                 {navLinks.map((link, i) => (
                   <motion.div
@@ -175,21 +172,25 @@ export default function Header() {
                 ))}
               </nav>
 
-              {/* Divider */}
               <div className="border-t border-border/40 mx-4" />
 
-              {/* CTA buttons */}
-              <div className="container mx-auto px-4 py-4 flex flex-col gap-3">
+              <div className="container mx-auto px-4 py-4 flex flex-col gap-2">
                 <a href="https://x.com/TradeXeasy" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
                   <Button variant="outline" className="w-full border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2 justify-center" data-testid="button-follow-x-mobile">
                     <SiX className="w-4 h-4" />
-                    Follow Founder on X
+                    @TradeXeasy di X
                   </Button>
                 </a>
                 <a href="https://jup.ag/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
                   <Button variant="outline" className="w-full border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2 justify-center" data-testid="button-wallet-mobile">
-                    <img src="https://jup.ag/favicon.ico" alt="Jupiter" className="w-4 h-4 rounded-full" />
-                    Open Jupiter Wallet
+                    <Wallet className="w-4 h-4" />
+                    Buka Jupiter Wallet
+                  </Button>
+                </a>
+                <a href="https://kickstart.easya.io/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
+                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 gap-2 justify-center" data-testid="button-launch-app-drawer">
+                    <Rocket className="w-4 h-4" />
+                    Launch App
                   </Button>
                 </a>
               </div>

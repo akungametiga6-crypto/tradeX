@@ -1,7 +1,8 @@
 import { Link } from "wouter";
 import { SiX, SiSolana, SiEthereum, SiBinance, SiPolygon } from "react-icons/si";
-import { ExternalLink } from "lucide-react";
-import logoPath from "@assets/a87c8240-7053-4b07-97aa-3f1afaec6e84_1782194174325.png";
+import { ExternalLink, Rocket } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import logoPath from "@/assets/tradex-logo.jpg";
 
 const blockchains = [
   { name: "Solana", icon: SiSolana, color: "text-[#14F195]", website: "https://solana.com", x: "https://x.com/solana", xHandle: "@solana" },
@@ -23,37 +24,34 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-4">
             <Link href="/" className="flex items-center gap-3 mb-5">
-              <img src={logoPath} alt="TradeX Logo" className="h-8 w-8 object-contain rounded-sm" />
+              <img src={logoPath} alt="TradeX Logo" className="h-9 w-9 object-contain rounded-full ring-1 ring-primary/30" />
               <span className="font-display font-bold text-lg tracking-tight bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 TRADEX
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
-              Trade Smart. Grow Fast. The premier multi-chain intelligence platform for serious crypto traders — no gatekeeping, no excuses.
+              Trade Smart. Grow Fast. Platform intelijen multi-chain untuk trader crypto serius — tanpa batasan, tanpa kompromi.
             </p>
-            <div className="flex gap-3">
-              <a
-                href="https://x.com/TradeXeasy"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Follow Founder on X"
-                className="w-9 h-9 rounded-lg bg-background border border-border/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
-              >
-                <SiX className="w-3.5 h-3.5" />
+
+            {/* Social buttons — each with its own labeled button */}
+            <div className="flex flex-col gap-2">
+              <a href="https://x.com/TradeXeasy" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="sm" className="w-full border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2 justify-start" data-testid="link-footer-founder-x">
+                  <SiX className="w-3.5 h-3.5 flex-shrink-0" />
+                  <span>@TradeXeasy</span>
+                </Button>
               </a>
-              <a
-                href="https://kickstart.easya.io/"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="EasyA Kickstart"
-                className="w-9 h-9 rounded-lg bg-background border border-border/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
-              >
-                <img
-                  src="https://kickstart.easya.io/favicon.ico"
-                  alt="EasyA"
-                  className="w-4 h-4 object-contain"
-                  onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
-                />
+              <a href="https://kickstart.easya.io/" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="sm" className="w-full border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2 justify-start" data-testid="link-footer-easya">
+                  <Rocket className="w-3.5 h-3.5 flex-shrink-0" />
+                  <span>EasyA Kickstart</span>
+                </Button>
+              </a>
+              <a href="https://x.com/EasyA_Kickstart" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="sm" className="w-full border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2 justify-start" data-testid="link-footer-easya-x">
+                  <SiX className="w-3.5 h-3.5 flex-shrink-0" />
+                  <span>@EasyA_Kickstart</span>
+                </Button>
               </a>
             </div>
           </div>
@@ -62,21 +60,11 @@ export default function Footer() {
           <div className="md:col-span-2">
             <h4 className="font-bold mb-5 text-sm uppercase tracking-wider text-muted-foreground">Platform</h4>
             <ul className="space-y-3 text-sm">
-              <li>
-                <a href="https://kickstart.easya.io/" target="_blank" rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5">
-                  <ExternalLink className="w-3 h-3" /> EasyA Kickstart
-                </a>
-              </li>
-              <li>
-                <a href="https://x.com/EasyA_Kickstart" target="_blank" rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5">
-                  <SiX className="w-3 h-3" /> @EasyA_Kickstart
-                </a>
-              </li>
               <li><a href="#markets" className="text-muted-foreground hover:text-primary transition-colors">Markets</a></li>
               <li><a href="#features" className="text-muted-foreground hover:text-primary transition-colors">Features</a></li>
               <li><a href="#game" className="text-muted-foreground hover:text-primary transition-colors">Trading Game</a></li>
+              <li><a href="#about" className="text-muted-foreground hover:text-primary transition-colors">About</a></li>
+              <li><a href="#legal" className="text-muted-foreground hover:text-primary transition-colors">Legal</a></li>
             </ul>
           </div>
 
