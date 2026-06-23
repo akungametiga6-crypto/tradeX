@@ -33,7 +33,7 @@ jobs:
         env:
           NODE_ENV: production
           PORT: 3000
-          BASE_PATH: /tradeX/
+          BASE_PATH: /
         run: pnpm --filter @workspace/tradex run build
 
       - name: Deploy to GitHub Pages
@@ -42,5 +42,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: artifacts/tradex/dist/public
           publish_branch: gh-pages
+          cname: tradexeasy.online
           force_orphan: true
           commit_message: "deploy: ${{ github.sha }}"
