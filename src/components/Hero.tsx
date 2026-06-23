@@ -56,9 +56,12 @@ export default function Hero() {
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </a>
-          <Button size="lg" variant="outline" className="h-14 px-8 text-lg border-border/50 bg-background/50 hover:bg-card rounded-none">
-            View Documentation
-          </Button>
+          <a href="https://youtu.be/8AGz4TC5a50?si=Oa27f8L76N0U8wuC" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" variant="outline" className="h-14 px-8 text-lg border-border/50 bg-background/50 hover:bg-card rounded-none gap-3" data-testid="button-view-docs">
+              <img src="https://www.youtube.com/favicon.ico" alt="YouTube" className="w-5 h-5" />
+              View Documentation
+            </Button>
+          </a>
         </motion.div>
 
         {/* Mock Chart UI at bottom of hero */}

@@ -49,11 +49,17 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <a href="https://x.com/TradeXeasy" target="_blank" rel="noopener noreferrer">
             <Button variant="outline" size="sm" className="hidden sm:flex border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2" data-testid="button-follow-x">
               <SiX className="w-4 h-4" />
               <span>Follow Founder</span>
+            </Button>
+          </a>
+          <a href="https://jup.ag/" target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" size="sm" className="hidden sm:flex border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2" data-testid="button-wallet">
+              <img src="https://jup.ag/favicon.ico" alt="Jupiter" className="w-4 h-4 rounded-full" />
+              <span>Wallet</span>
             </Button>
           </a>
           <a href="https://kickstart.easya.io/" target="_blank" rel="noopener noreferrer">

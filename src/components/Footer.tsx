@@ -97,7 +97,7 @@ export default function Footer() {
 
         <div className="border-t border-border/50 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            &copy; 2025 TradeX. All rights reserved.
+            &copy; 2026 TradeX. All rights reserved.
           </p>
           <div className="text-xs text-muted-foreground flex items-center gap-1">
             Powered by{" "}
