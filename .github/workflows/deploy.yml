@@ -1,47 +1,47 @@
 name: Deploy to GitHub Pages
 
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
+  on:
+    push:
+      branches: [main]
+    workflow_dispatch:
 
-permissions:
-  contents: write
+  permissions:
+    contents: write
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
+  jobs:
+    build-and-deploy:
+      runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
+        - name: Setup pnpm
+          uses: pnpm/action-setup@v4
+          with:
+            version: 10
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: pnpm
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 24
 
-      - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        - name: Install dependencies
+          run: pnpm install --no-frozen-lockfile
 
-      - name: Build
-        env:
-          NODE_ENV: production
-          PORT: 3000
-          BASE_PATH: /tradeX/
-        run: pnpm --filter @workspace/tradex run build
+        - name: Build
+          env:
+            NODE_ENV: production
+            PORT: 3000
+            BASE_PATH: /tradeX/
+          run: pnpm --filter @workspace/tradex run build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: artifacts/tradex/dist/public
-          publish_branch: gh-pages
-          force_orphan: true
-          commit_message: "deploy: ${{ github.sha }}"
+        - name: Deploy to GitHub Pages
+          uses: peaceiris/actions-gh-pages@v4
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: artifacts/tradex/dist/public
+            publish_branch: gh-pages
+            force_orphan: true
+            commit_message: "deploy: ${{ github.sha }}"
+  
