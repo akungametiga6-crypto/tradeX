@@ -21,7 +21,7 @@ const secondary = [
   {
     icon: ShieldAlert,
     title: "Account-level stop-loss",
-    body: "Set a single max drawdown rule. TradeX closes all positions automatically when your floor is hit.",
+    body: "Set a single max drawdown rule. tradexeasy closes all positions automatically when your floor is hit.",
   },
   {
     icon: Network,
