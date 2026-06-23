@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import MarketRankings from "@/components/MarketRankings";
 import Features from "@/components/Features";
+import GamePromo from "@/components/GamePromo";
 import About from "@/components/About";
 import HowItWorks from "@/components/HowItWorks";
 import SupportedChains from "@/components/SupportedChains";
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <MarketRankings />
         <Features />
+        <GamePromo />
         <HowItWorks />
         <SupportedChains />
         <About />
