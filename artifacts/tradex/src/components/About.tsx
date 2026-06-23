@@ -13,7 +13,7 @@ export default function About() {
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Built by Traders,<br />For Traders.</h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              TradeX was born from frustration. Retail tools were too slow, and institutional platforms were gatekept. We built the bridge.
+              tradexeasy was born from frustration. Retail tools were too slow, and institutional platforms were gatekept. We built the bridge.
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Our mission is to democratize elite trading intelligence. We process millions of data points per second to give you the exact insights you need, exactly when you need them.
@@ -49,7 +49,7 @@ export default function About() {
             <div className="relative rounded-2xl overflow-hidden border border-border/50 bg-background">
               <img 
                 src={profilePath} 
-                alt="TradeX Persona" 
+                alt="tradexeasy Persona" 
                 className="w-full h-auto object-cover opacity-80 mix-blend-luminosity grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-700"
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background to-transparent">
