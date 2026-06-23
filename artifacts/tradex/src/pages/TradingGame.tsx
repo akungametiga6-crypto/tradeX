@@ -426,7 +426,7 @@ export default function TradingGame() {
           </div>
 
           {/* Candlestick chart */}
-          <div className="px-2 pt-2" style={{ height: 230 }}>
+          <div className="px-2 pt-2 relative" style={{ height: 230 }}>
             {loading ? (
               <div className="w-full h-full flex items-center justify-center text-muted-foreground text-sm gap-2">
                 <RefreshCw className="w-4 h-4 animate-spin" /> Fetching live price…
@@ -439,6 +439,10 @@ export default function TradingGame() {
             ) : (
               <CandlestickChart candles={candles} prediction={phase === "countdown" ? prediction : null} />
             )}
+            {/* tradexeasy watermark */}
+            <div className="absolute bottom-2 right-2 flex items-center gap-1.5 opacity-25 pointer-events-none select-none">
+              <img src={logoPath} alt="tradexeasy" className="h-5 w-auto object-contain" />
+            </div>
           </div>
 
           {/* Volume bars */}
@@ -607,6 +611,14 @@ export default function TradingGame() {
             Trade real SOL on Jupiter →
           </a>
         </p>
+
+        {/* tradexeasy branding badge */}
+        <div className="flex items-center justify-center gap-2.5 mt-6 mb-2 py-3 border-t border-border/30">
+          <img src={logoPath} alt="tradexeasy" className="h-6 w-auto object-contain opacity-70" />
+          <span className="text-xs text-muted-foreground/60 font-mono tracking-wide">
+            powered by tradexeasy · live market data
+          </span>
+        </div>
       </main>
     </div>
   );
