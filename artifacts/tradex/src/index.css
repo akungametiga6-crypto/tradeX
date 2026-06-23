@@ -78,7 +78,7 @@
   --elevate-1: rgba(255,255,255, .04);
   --elevate-2: rgba(255,255,255, .09);
 
-  /* Warm charcoal — not the generic blue-gray */
+  /* Warm charcoal */
   --background: 230 14% 5%;
   --foreground: 38 25% 93%;
 
@@ -94,11 +94,11 @@
   --popover-foreground: 38 25% 93%;
   --popover-border: 230 12% 14%;
 
-  /* Amber gold — premium trading terminal */
+  /* Amber gold */
   --primary: 43 95% 55%;
   --primary-foreground: 230 14% 5%;
 
-  /* Hot magenta — distinctive, nothing like generic crypto blue */
+  /* Hot magenta */
   --secondary: 322 85% 58%;
   --secondary-foreground: 38 25% 93%;
 
@@ -106,7 +106,7 @@
   --muted: 230 12% 18%;
   --muted-foreground: 230 12% 58%;
 
-  /* Neon lime — profit / positive indicator */
+  /* Neon lime */
   --accent: 88 90% 50%;
   --accent-foreground: 230 14% 5%;
 

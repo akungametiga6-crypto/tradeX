@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 export default function GamePromo() {
   return (
     <section className="py-24 relative overflow-hidden" id="game">
-      {/* Glow background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-4">
@@ -19,7 +18,6 @@ export default function GamePromo() {
           style={{ boxShadow: "0 0 60px rgba(0,229,176,0.06), 0 0 120px rgba(120,60,240,0.06)" }}
         >
           <div className="grid md:grid-cols-2 gap-0">
-            {/* Left: info */}
             <div className="p-8 md:p-10 flex flex-col justify-center">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-xs font-medium mb-5 w-fit">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#f04c68] animate-pulse" />
@@ -30,7 +28,7 @@ export default function GamePromo() {
                 Predict Up<br />or Down?
               </h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Play our SOL/USD prediction game powered by real Jupiter price data. 
+                Play our SOL/USD prediction game powered by real Jupiter price data.
                 Start with $1,000 virtual USDC — no wallet needed.
               </p>
 
@@ -60,9 +58,7 @@ export default function GamePromo() {
               </Link>
             </div>
 
-            {/* Right: mock UI */}
             <div className="relative bg-background/60 border-l border-border/30 p-6 flex flex-col justify-center gap-4">
-              {/* Fake chart lines */}
               <div className="w-full h-32 relative overflow-hidden rounded-lg border border-border/30 bg-background/80">
                 <svg viewBox="0 0 300 100" className="w-full h-full">
                   <polyline
@@ -84,7 +80,6 @@ export default function GamePromo() {
                 <div className="absolute bottom-2 right-3 text-sm font-mono font-bold text-[#00e5b0]">$70.xx</div>
               </div>
 
-              {/* Up/Down buttons preview */}
               <div className="grid grid-cols-2 gap-3">
                 <motion.div
                   animate={{ boxShadow: ["0 0 10px rgba(0,229,176,0.1)", "0 0 25px rgba(0,229,176,0.3)", "0 0 10px rgba(0,229,176,0.1)"] }}
@@ -100,7 +95,6 @@ export default function GamePromo() {
                 </div>
               </div>
 
-              {/* Stats row */}
               <div className="grid grid-cols-3 gap-2 text-center">
                 {[
                   { label: "Balance", val: "$1,000" },

@@ -40,7 +40,6 @@ export default function HowItWorks() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
 
-          {/* Left: sticky heading */}
           <div className="lg:sticky lg:top-36">
             <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Execution flow</p>
             <h2 className="text-3xl md:text-5xl font-black leading-tight mb-6">
@@ -55,9 +54,7 @@ export default function HowItWorks() {
             </div>
           </div>
 
-          {/* Right: step timeline */}
           <div className="relative flex flex-col gap-0">
-            {/* Connecting line */}
             <div className="absolute left-5 top-8 bottom-8 w-px bg-border/40" />
 
             {steps.map((step, i) => {
@@ -71,19 +68,18 @@ export default function HowItWorks() {
                   transition={{ delay: i * 0.12 }}
                   className="relative pl-16 pb-10 last:pb-0"
                 >
-                  {/* Step dot */}
                   <div className="absolute left-0 top-0 w-10 h-10 rounded-full bg-card border-2 border-primary/40 flex items-center justify-center z-10">
                     <Icon className="w-4 h-4 text-primary" />
                   </div>
 
                   <div className="flex items-center gap-3 mb-2">
-                    <span className="text-[10px] font-black text-muted-foreground/50 uppercase tracking-widest">{step.num}</span>
-                    <h3 className="font-bold text-base">{step.title}</h3>
+                    <span className="text-xs font-bold text-muted-foreground/40 font-mono">{step.num}</span>
+                    <h3 className="font-black text-lg">{step.title}</h3>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{step.detail}</p>
 
-                  {/* Terminal block */}
-                  <div className="bg-background border border-border/40 rounded-lg px-4 py-3 font-mono text-[11px] text-muted-foreground/70 whitespace-pre leading-5">
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">{step.detail}</p>
+
+                  <div className="bg-background rounded-xl border border-border/50 p-4 font-mono text-xs text-muted-foreground/80 whitespace-pre-line">
                     {step.terminal}
                   </div>
                 </motion.div>

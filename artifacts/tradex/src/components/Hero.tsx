@@ -10,15 +10,12 @@ const CHART_BARS = Array.from({ length: 40 }, (_, i) => ({
 export default function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center pt-[116px] overflow-hidden" id="home">
-      {/* Background glow effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[100px] pointer-events-none" />
 
-      {/* Grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
       <div className="container mx-auto px-4 relative z-10 flex flex-col items-center text-center">
-        {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -30,7 +27,6 @@ export default function Hero() {
           <span>Live Market Data Active</span>
         </motion.div>
 
-        {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -43,7 +39,6 @@ export default function Hero() {
           </span>
         </motion.h1>
 
-        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,7 +48,6 @@ export default function Hero() {
           The intelligent crypto trading platform for serious traders. High-speed execution, deep liquidity, and precision tools wrapped in a next-generation terminal.
         </motion.p>
 
-        {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -89,7 +83,6 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        {/* Stats row */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -109,7 +102,6 @@ export default function Hero() {
           ))}
         </motion.div>
 
-        {/* Mock Chart UI */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -117,7 +109,6 @@ export default function Hero() {
           className="w-full max-w-5xl mt-16 h-48 md:h-64 border-t border-x border-border/50 rounded-t-xl bg-card/30 backdrop-blur-sm relative overflow-hidden flex items-end"
         >
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
-          {/* Chart header overlay */}
           <div className="absolute top-3 left-4 flex items-center gap-2 z-20">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             <span className="text-xs font-mono text-muted-foreground">BTC/USD · 1m · Live</span>
@@ -125,7 +116,6 @@ export default function Hero() {
           <div className="absolute top-3 right-4 z-20">
             <span className="text-xs font-mono font-bold text-primary">▲ +2.34%</span>
           </div>
-          {/* Bars */}
           <div className="w-full flex items-end justify-between px-4 pb-4 gap-1 opacity-40">
             {CHART_BARS.map((bar, i) => (
               <div

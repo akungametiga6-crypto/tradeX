@@ -31,7 +31,6 @@ export default function MarketRankings() {
         </div>
 
         <div className="bg-card border border-border/50 rounded-2xl overflow-hidden">
-          {/* Table header */}
           <div className="grid grid-cols-[2rem_1fr_auto_auto_auto] md:grid-cols-[2rem_1fr_auto_auto_auto_160px] items-center gap-4 px-6 py-3 border-b border-border/30 text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60">
             <span>#</span>
             <span>Chain</span>
@@ -41,7 +40,6 @@ export default function MarketRankings() {
             <span className="hidden md:block" />
           </div>
 
-          {/* Rows */}
           {chains.map((c, i) => {
             const up = c.change >= 0;
             return (
@@ -53,10 +51,8 @@ export default function MarketRankings() {
                 transition={{ delay: i * 0.06 }}
                 className="grid grid-cols-[2rem_1fr_auto_auto_auto] md:grid-cols-[2rem_1fr_auto_auto_auto_160px] items-center gap-4 px-6 py-4 border-b border-border/20 last:border-0 hover:bg-background/40 transition-colors group"
               >
-                {/* Rank */}
                 <span className="text-sm font-black text-muted-foreground/40">{c.rank}</span>
 
-                {/* Chain */}
                 <div className="flex items-center gap-3 min-w-0">
                   <div
                     className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 border border-border/40 group-hover:border-border/80 transition-colors"
@@ -70,19 +66,14 @@ export default function MarketRankings() {
                   </div>
                 </div>
 
-                {/* Volume */}
                 <span className="text-sm font-mono font-bold text-right">{c.volume}</span>
-
-                {/* Share */}
                 <span className="text-sm font-mono text-muted-foreground text-right hidden sm:block">{c.share}%</span>
 
-                {/* Change */}
                 <div className={`flex items-center justify-end gap-1 text-sm font-bold ${up ? "text-emerald-400" : "text-red-400"}`}>
                   {up ? <TrendingUp className="w-3.5 h-3.5" /> : <TrendingDown className="w-3.5 h-3.5" />}
                   {up ? "+" : ""}{c.change}%
                 </div>
 
-                {/* Progress bar — desktop only */}
                 <div className="hidden md:block">
                   <div className="h-1.5 w-full bg-background rounded-full overflow-hidden">
                     <motion.div

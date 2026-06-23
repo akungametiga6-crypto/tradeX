@@ -67,7 +67,6 @@ export default function Testimonials() {
           </a>
         </div>
 
-        {/* Featured quote */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -100,7 +99,6 @@ export default function Testimonials() {
           </div>
         </motion.div>
 
-        {/* 3-col grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {others.map((t, i) => (
             <motion.div

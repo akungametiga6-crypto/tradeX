@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import profilePath from "@assets/IMG-20260623-WA0001_1782194174373.jpg";
 
 export default function About() {
   return (
@@ -46,16 +45,16 @@ export default function About() {
             className="relative"
           >
             <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-[60px] pointer-events-none" />
-            <div className="relative rounded-2xl overflow-hidden border border-border/50 bg-background">
-              <img 
-                src={profilePath} 
-                alt="tradexeasy Persona" 
-                className="w-full h-auto object-cover opacity-80 mix-blend-luminosity grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-700"
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background to-transparent">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 border border-primary/50 text-primary text-xs font-bold uppercase tracking-widest backdrop-blur-md">
-                  Lead Engineer / Founder
-                </div>
+            <div className="relative rounded-2xl overflow-hidden border border-border/50 bg-card p-10 flex flex-col items-center justify-center min-h-[320px] gap-6">
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-4xl font-black text-primary-foreground">
+                T
+              </div>
+              <div className="text-center">
+                <p className="text-xl font-black mb-1">tradexeasy</p>
+                <p className="text-muted-foreground text-sm">Intelligent crypto trading platform</p>
+              </div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 border border-primary/50 text-primary text-xs font-bold uppercase tracking-widest backdrop-blur-md">
+                Lead Engineer / Founder
               </div>
             </div>
           </motion.div>

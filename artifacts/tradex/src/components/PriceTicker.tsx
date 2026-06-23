@@ -16,7 +16,6 @@ const SYMBOL_MAP: Record<string, string> = {
 };
 
 async function fetchPrices(): Promise<PriceEntry[]> {
-  // Try the API proxy first (works on Replit), fall back to CoinGecko directly (GitHub Pages)
   const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
   try {
     const res = await fetch(`${BASE}/api/prices`, { signal: AbortSignal.timeout(5000) });

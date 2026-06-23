@@ -4,7 +4,7 @@ import { SiX } from "react-icons/si";
 import { Menu, X, Wallet, Rocket } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import logoPath from "@/assets/tradexeasy-logo.png";
+import logoPath from "@/assets/tradexeasy-logo-full.jpg";
 
 const navLinks = [
   { name: "Home", href: "#" },
@@ -38,14 +38,13 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
+        className={`fixed top-9 left-0 right-0 z-50 transition-all duration-300 border-b ${
           scrolled || menuOpen
             ? "bg-background/95 backdrop-blur-md border-border/50 shadow-sm"
             : "bg-transparent border-transparent"
         }`}
       >
         <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-          {/* Logo */}
           <Link href="/" className="flex items-center group" onClick={closeMenu}>
             <img
               src={logoPath}
@@ -54,7 +53,6 @@ export default function Header() {
             />
           </Link>
 
-          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) =>
               link.href.startsWith("/") ? (
@@ -77,7 +75,6 @@ export default function Header() {
             )}
           </nav>
 
-          {/* Desktop CTAs */}
           <div className="hidden md:flex items-center gap-2">
             <a href="https://x.com/TradeXeasy" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="sm" className="border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2" data-testid="button-follow-x">
@@ -99,7 +96,6 @@ export default function Header() {
             </a>
           </div>
 
-          {/* Mobile: Launch App + hamburger */}
           <div className="flex md:hidden items-center gap-2">
             <a href="https://kickstart.easya.io/" target="_blank" rel="noopener noreferrer">
               <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 box-glow-primary text-xs px-3" data-testid="button-launch-app-mobile">
@@ -118,7 +114,6 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile drawer */}
       <AnimatePresence>
         {menuOpen && (
           <>
@@ -138,7 +133,7 @@ export default function Header() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.22, ease: "easeOut" }}
-              className="fixed top-20 left-0 right-0 z-40 md:hidden bg-background/97 backdrop-blur-md border-b border-border/50 shadow-xl"
+              className="fixed top-29 left-0 right-0 z-40 md:hidden bg-background/97 backdrop-blur-md border-b border-border/50 shadow-xl"
             >
               <nav className="container mx-auto px-4 py-4 flex flex-col gap-1">
                 {navLinks.map((link, i) => (
@@ -175,13 +170,13 @@ export default function Header() {
                 <a href="https://x.com/TradeXeasy" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
                   <Button variant="outline" className="w-full border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2 justify-center" data-testid="button-follow-x-mobile">
                     <SiX className="w-4 h-4" />
-                    @TradeXeasy di X
+                    @TradeXeasy on X
                   </Button>
                 </a>
                 <a href="https://jup.ag/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
                   <Button variant="outline" className="w-full border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2 justify-center" data-testid="button-wallet-mobile">
                     <Wallet className="w-4 h-4" />
-                    Buka Jupiter Wallet
+                    Open Jupiter Wallet
                   </Button>
                 </a>
                 <a href="https://kickstart.easya.io/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>

@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { SiX, SiSolana, SiEthereum, SiBinance, SiPolygon } from "react-icons/si";
 import { ExternalLink, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoPath from "@/assets/tradexeasy-logo.png";
+import logoPath from "@/assets/tradexeasy-logo-full.jpg";
 
 const blockchains = [
   { name: "Solana", icon: SiSolana, color: "text-[#14F195]", website: "https://solana.com", x: "https://x.com/solana", xHandle: "@solana" },
@@ -21,16 +21,14 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
 
-          {/* Brand */}
           <div className="md:col-span-4">
             <Link href="/" className="flex items-center mb-5">
               <img src={logoPath} alt="tradexeasy Logo" className="h-9 w-auto object-contain" />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
-              Trade Smart. Grow Fast. Platform intelijen multi-chain untuk trader crypto serius — tanpa batasan, tanpa kompromi.
+              Trade Smart. Grow Fast. Intelligent multi-chain trading platform for serious crypto traders — no limits, no compromise.
             </p>
 
-            {/* Social buttons — each with its own labeled button */}
             <div className="flex flex-col gap-2">
               <a href="https://x.com/TradeXeasy" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" size="sm" className="w-full border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2 justify-start" data-testid="link-footer-founder-x">
@@ -53,7 +51,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Platform links */}
           <div className="md:col-span-2">
             <h4 className="font-bold mb-5 text-sm uppercase tracking-wider text-muted-foreground">Platform</h4>
             <ul className="space-y-3 text-sm">
@@ -65,7 +62,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Blockchain links */}
           <div className="md:col-span-6">
             <h4 className="font-bold mb-5 text-sm uppercase tracking-wider text-muted-foreground">Supported Blockchains</h4>
             <div className="grid grid-cols-2 gap-x-6 gap-y-3">
@@ -95,7 +91,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Legal row */}
         <div className="border-t border-border/50 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
             &copy; 2026 tradexeasy. All rights reserved. Trading crypto involves significant risk.

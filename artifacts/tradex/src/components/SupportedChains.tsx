@@ -121,7 +121,6 @@ export default function SupportedChains() {
                 transition={{ delay: i * 0.07 }}
                 className={`group relative bg-card border border-border/50 rounded-xl p-5 flex flex-col gap-3 transition-all duration-300 ${chain.hoverBorder} hover:shadow-lg`}
               >
-                {/* Icon + name */}
                 <div className="flex items-center gap-3">
                   <div className={`w-10 h-10 rounded-lg bg-background border border-border/50 flex items-center justify-center flex-shrink-0 ${chain.color} transition-colors`}>
                     <Icon className="w-5 h-5" />
@@ -132,14 +131,12 @@ export default function SupportedChains() {
                   </div>
                 </div>
 
-                {/* Links */}
                 <div className="flex items-center gap-2 pt-1 border-t border-border/30">
                   <a
                     href={chain.website}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
-                    title={`${chain.name} website`}
                   >
                     <ExternalLink className="w-3 h-3" />
                     <span>Website</span>
@@ -150,7 +147,6 @@ export default function SupportedChains() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
-                    title={`${chain.name} on X`}
                   >
                     <SiX className="w-3 h-3" />
                     <span>{chain.xHandle}</span>

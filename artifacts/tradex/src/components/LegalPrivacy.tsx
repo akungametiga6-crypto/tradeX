@@ -8,7 +8,7 @@ export default function LegalPrivacy() {
         </div>
 
         <div className="space-y-12 text-sm text-muted-foreground leading-relaxed prose prose-invert max-w-none">
-          
+
           <div>
             <h3 className="text-xl font-bold text-foreground mb-4">Terms of Service</h3>
             <p className="mb-4">
@@ -35,7 +35,7 @@ export default function LegalPrivacy() {
               Crypto trading involves significant risk of loss and is not suitable for every investor. The valuation of cryptocurrencies may fluctuate, and as a result, clients may lose more than their original investment.
             </p>
             <p>
-              Past performance is not indicative of future results. The highly leveraged nature of cryptocurrency trading means that small market movements will have a great impact on your trading account and this can work against you, leading to large losses or can work for you, leading to large gains. Only trade what you can afford to lose.
+              Past performance is not indicative of future results. The highly leveraged nature of cryptocurrency trading means that small market movements will have a great impact on your trading account. Only trade what you can afford to lose.
             </p>
           </div>
 

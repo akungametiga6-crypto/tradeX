@@ -40,7 +40,6 @@ export default function Features() {
     <section className="py-24 relative border-t border-border/30" id="features">
       <div className="container mx-auto px-4">
 
-        {/* Header — left-aligned, not centred */}
         <div className="mb-14 max-w-xl">
           <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Tools</p>
           <h2 className="text-3xl md:text-5xl font-black leading-tight mb-4">
@@ -51,10 +50,8 @@ export default function Features() {
           </p>
         </div>
 
-        {/* Bento grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
 
-          {/* Hero feature — spans 2 cols */}
           {primary.map((f) => {
             const Icon = f.icon;
             return (
@@ -74,7 +71,6 @@ export default function Features() {
                   <p className="text-muted-foreground leading-relaxed max-w-md">{f.body}</p>
                 </div>
 
-                {/* Terminal mockup */}
                 <div className="bg-background rounded-xl border border-border/50 p-4 font-mono text-xs overflow-hidden">
                   <div className="flex items-center gap-1.5 mb-3">
                     <span className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
@@ -108,7 +104,6 @@ export default function Features() {
             );
           })}
 
-          {/* Secondary stack — 1 col, 2 rows */}
           <div className="flex flex-col gap-4">
             {secondary.slice(0, 2).map((f, i) => {
               const Icon = f.icon;
@@ -129,7 +124,6 @@ export default function Features() {
             })}
           </div>
 
-          {/* Bottom 2 features */}
           {secondary.slice(2).map((f, i) => {
             const Icon = f.icon;
             return (
@@ -149,7 +143,6 @@ export default function Features() {
           })}
         </div>
 
-        {/* CTA strip */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
