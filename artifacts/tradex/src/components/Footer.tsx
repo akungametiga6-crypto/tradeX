@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { SiX, SiSolana, SiEthereum, SiBinance, SiPolygon } from "react-icons/si";
-import { ExternalLink, Rocket } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoPath from "@/assets/tradexeasy-logo-full.png";
 
@@ -34,18 +34,6 @@ export default function Footer() {
                 <Button variant="outline" size="sm" className="w-full border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2 justify-start" data-testid="link-footer-founder-x">
                   <SiX className="w-3.5 h-3.5 flex-shrink-0" />
                   <span>@Tradexesy</span>
-                </Button>
-              </a>
-              <a href="https://kickstart.easya.io/" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="sm" className="w-full border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2 justify-start" data-testid="link-footer-easya">
-                  <Rocket className="w-3.5 h-3.5 flex-shrink-0" />
-                  <span>EasyA Kickstart</span>
-                </Button>
-              </a>
-              <a href="https://x.com/EasyA_Kickstart" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="sm" className="w-full border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2 justify-start" data-testid="link-footer-easya-x">
-                  <SiX className="w-3.5 h-3.5 flex-shrink-0" />
-                  <span>@EasyA_Kickstart</span>
                 </Button>
               </a>
             </div>
@@ -99,11 +87,7 @@ export default function Footer() {
             <a href="#legal" className="hover:text-primary transition-colors">Terms</a>
             <a href="#legal" className="hover:text-primary transition-colors">Privacy</a>
             <span className="flex items-center gap-1">
-              Powered by{" "}
-              <a href="https://kickstart.easya.io/" target="_blank" rel="noopener noreferrer"
-                className="font-bold text-foreground hover:text-primary transition-colors ml-1">
-                EasyA Kickstart
-              </a>
+              Built for serious traders
             </span>
           </div>
         </div>
