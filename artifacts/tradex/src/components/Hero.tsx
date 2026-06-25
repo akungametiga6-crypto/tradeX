@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Activity, Zap } from "lucide-react";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 
 const CHART_BARS = Array.from({ length: 40 }, (_, i) => ({
@@ -10,13 +11,10 @@ const CHART_BARS = Array.from({ length: 40 }, (_, i) => ({
 export default function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center pt-[116px] overflow-hidden" id="home">
-      {/* Ambient glow — contained, responsive */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(600px,90vw)] h-[min(600px,90vw)] bg-primary/8 rounded-full blur-[80px] pointer-events-none" />
       <div className="absolute top-0 right-0 w-[min(400px,60vw)] h-[min(400px,60vw)] bg-secondary/7 rounded-full blur-[80px] pointer-events-none" />
-      {/* Bottom fade so glow doesn't bleed into next section */}
       <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-background to-transparent pointer-events-none z-10" />
 
-      {/* Grid — lighter on mobile, visible on desktop */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px] md:bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_20%,#000_60%,transparent_100%)] pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10 flex flex-col items-center text-center">
@@ -58,7 +56,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
         >
-          <a href="https://tradexeasy.online/game" target="_blank" rel="noopener noreferrer">
+          <Link href="/game">
             <Button
               size="lg"
               className="h-14 px-8 text-lg bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-none box-glow-primary group gap-3"
@@ -67,7 +65,7 @@ export default function Hero() {
               <Zap className="w-5 h-5" />
               Play Now — Free
             </Button>
-          </a>
+          </Link>
           <a href="https://youtu.be/8AGz4TC5a50?si=Oa27f8L76N0U8wuC" target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
