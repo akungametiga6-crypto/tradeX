@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Activity } from "lucide-react";
+import { Activity, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const CHART_BARS = Array.from({ length: 40 }, (_, i) => ({
@@ -64,8 +64,8 @@ export default function Hero() {
               className="h-14 px-8 text-lg bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-none box-glow-primary group gap-3"
               data-testid="button-start-trading"
             >
-              Start
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <Zap className="w-5 h-5" />
+              Play Now — Free
             </Button>
           </a>
           <a href="https://youtu.be/8AGz4TC5a50?si=Oa27f8L76N0U8wuC" target="_blank" rel="noopener noreferrer">
