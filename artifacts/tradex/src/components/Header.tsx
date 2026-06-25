@@ -4,7 +4,7 @@ import { SiX } from "react-icons/si";
 import { Menu, X, Wallet, Rocket } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import logoPath from "@/assets/tradexeasy-logo-full.png";
+import logoPath from "@/assets/tradex-logo.jpg";
 
 const navLinks = [
   { name: "Home", href: "#" },
@@ -88,7 +88,7 @@ export default function Header() {
                 <span>Jupiter</span>
               </Button>
             </a>
-            <a href="https://kickstart.easya.io/" target="_blank" rel="noopener noreferrer">
+            <a href="https://tradexeasy.online/game" target="_blank" rel="noopener noreferrer">
               <Button className="bg-primary text-primary-foreground hover:bg-primary/90 box-glow-primary gap-2" data-testid="button-launch-app">
                 <Rocket className="w-4 h-4" />
                 Launch App
@@ -97,7 +97,7 @@ export default function Header() {
           </div>
 
           <div className="flex md:hidden items-center gap-2">
-            <a href="https://kickstart.easya.io/" target="_blank" rel="noopener noreferrer">
+            <a href="https://tradexeasy.online/game" target="_blank" rel="noopener noreferrer">
               <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 box-glow-primary text-xs px-3" data-testid="button-launch-app-mobile">
                 Launch App
               </Button>
@@ -179,7 +179,7 @@ export default function Header() {
                     Open Jupiter Wallet
                   </Button>
                 </a>
-                <a href="https://kickstart.easya.io/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
+                <a href="https://tradexeasy.online/game" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
                   <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 gap-2 justify-center" data-testid="button-launch-app-drawer">
                     <Rocket className="w-4 h-4" />
                     Launch App
