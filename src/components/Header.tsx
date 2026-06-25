@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { SiX } from "react-icons/si";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import logoPath from "@assets/a87c8240-7053-4b07-97aa-3f1afaec6e84_1782194174325.png";
@@ -28,7 +28,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [menuOpen]);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
@@ -46,7 +45,6 @@ export default function Header() {
         }`}
       >
         <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-          {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group" onClick={closeMenu}>
             <img
               src={logoPath}
@@ -58,7 +56,6 @@ export default function Header() {
             </span>
           </Link>
 
-          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) =>
               link.href.startsWith("/") ? (
@@ -81,7 +78,6 @@ export default function Header() {
             )}
           </nav>
 
-          {/* Desktop CTAs */}
           <div className="hidden md:flex items-center gap-3">
             <a href="https://x.com/TradeXeasy" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="sm" className="border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2" data-testid="button-follow-x">
@@ -95,20 +91,21 @@ export default function Header() {
                 <span>Wallet</span>
               </Button>
             </a>
-            <a href="https://kickstart.easya.io/" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 box-glow-primary" data-testid="button-launch-app">
-                Launch App
+            <Link href="/game">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 box-glow-primary gap-2" data-testid="button-launch-app">
+                <Zap className="w-4 h-4" />
+                Play Now — Free
               </Button>
-            </a>
+            </Link>
           </div>
 
-          {/* Mobile: Launch App + hamburger */}
           <div className="flex md:hidden items-center gap-2">
-            <a href="https://kickstart.easya.io/" target="_blank" rel="noopener noreferrer">
-              <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 box-glow-primary text-xs px-3" data-testid="button-launch-app-mobile">
-                Launch App
+            <Link href="/game">
+              <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 box-glow-primary text-xs px-3 gap-1.5" data-testid="button-launch-app-mobile">
+                <Zap className="w-3.5 h-3.5" />
+                Play Now
               </Button>
-            </a>
+            </Link>
             <button
               onClick={() => setMenuOpen((o) => !o)}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -121,11 +118,9 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile drawer */}
       <AnimatePresence>
         {menuOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               key="backdrop"
               initial={{ opacity: 0 }}
@@ -135,8 +130,6 @@ export default function Header() {
               className="fixed inset-0 z-40 bg-background/60 backdrop-blur-sm md:hidden"
               onClick={closeMenu}
             />
-
-            {/* Slide-down drawer */}
             <motion.div
               key="drawer"
               initial={{ opacity: 0, y: -12 }}
@@ -145,7 +138,6 @@ export default function Header() {
               transition={{ duration: 0.22, ease: "easeOut" }}
               className="fixed top-20 left-0 right-0 z-40 md:hidden bg-background/97 backdrop-blur-md border-b border-border/50 shadow-xl"
             >
-              {/* Nav links */}
               <nav className="container mx-auto px-4 py-4 flex flex-col gap-1">
                 {navLinks.map((link, i) => (
                   <motion.div
@@ -174,11 +166,7 @@ export default function Header() {
                   </motion.div>
                 ))}
               </nav>
-
-              {/* Divider */}
               <div className="border-t border-border/40 mx-4" />
-
-              {/* CTA buttons */}
               <div className="container mx-auto px-4 py-4 flex flex-col gap-3">
                 <a href="https://x.com/TradeXeasy" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
                   <Button variant="outline" className="w-full border-border/50 bg-background/50 hover:bg-card hover:text-primary gap-2 justify-center" data-testid="button-follow-x-mobile">
@@ -192,6 +180,12 @@ export default function Header() {
                     Open Jupiter Wallet
                   </Button>
                 </a>
+                <Link href="/game" onClick={closeMenu}>
+                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 gap-2 justify-center" data-testid="button-launch-app-drawer">
+                    <Zap className="w-4 h-4" />
+                    Play Now — Free
+                  </Button>
+                </Link>
               </div>
             </motion.div>
           </>
