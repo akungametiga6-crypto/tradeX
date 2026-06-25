@@ -149,14 +149,12 @@ export default function Features() {
           viewport={{ once: true }}
           className="mt-6 bg-card border border-border/50 rounded-2xl px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4"
         >
-          <p className="text-sm text-muted-foreground">All features live on EasyA Kickstart. No sign-up required to start trading.</p>
+          <p className="text-sm text-muted-foreground">All features available on tradexeasy. No sign-up required to start playing.</p>
           <a
-            href="https://kickstart.easya.io/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/game"
             className="flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all"
           >
-            Launch terminal <ArrowRight className="w-4 h-4" />
+            Play Now — Free <ArrowRight className="w-4 h-4" />
           </a>
         </motion.div>
       </div>
