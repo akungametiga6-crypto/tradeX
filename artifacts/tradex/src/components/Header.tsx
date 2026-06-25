@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { SiX } from "react-icons/si";
-import { Menu, X, Wallet, Rocket } from "lucide-react";
+import { Menu, X, Wallet, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import logoPath from "@/assets/tradex-logo.jpg";
@@ -90,16 +90,17 @@ export default function Header() {
             </a>
             <a href="https://tradexeasy.online/game" target="_blank" rel="noopener noreferrer">
               <Button className="bg-primary text-primary-foreground hover:bg-primary/90 box-glow-primary gap-2" data-testid="button-launch-app">
-                <Rocket className="w-4 h-4" />
-                Launch App
+                <Zap className="w-4 h-4" />
+                Play Now — Free
               </Button>
             </a>
           </div>
 
           <div className="flex md:hidden items-center gap-2">
             <a href="https://tradexeasy.online/game" target="_blank" rel="noopener noreferrer">
-              <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 box-glow-primary text-xs px-3" data-testid="button-launch-app-mobile">
-                Launch App
+              <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 box-glow-primary text-xs px-3 gap-1.5" data-testid="button-launch-app-mobile">
+                <Zap className="w-3.5 h-3.5" />
+                Play Now
               </Button>
             </a>
             <button
@@ -181,8 +182,8 @@ export default function Header() {
                 </a>
                 <a href="https://tradexeasy.online/game" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
                   <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 gap-2 justify-center" data-testid="button-launch-app-drawer">
-                    <Rocket className="w-4 h-4" />
-                    Launch App
+                    <Zap className="w-4 h-4" />
+                    Play Now — Free
                   </Button>
                 </a>
               </div>
