@@ -58,19 +58,13 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
         >
-          <a href="https://kickstart.easya.io/" target="_blank" rel="noopener noreferrer">
+          <a href="https://tradexeasy.online/game" target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
               className="h-14 px-8 text-lg bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-none box-glow-primary group gap-3"
               data-testid="button-start-trading"
             >
-              <img
-                src="https://kickstart.easya.io/favicon.ico"
-                alt="EasyA Kickstart"
-                className="w-5 h-5 rounded-sm object-contain"
-                onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
-              />
-              Start Trading
+              Start
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </a>
