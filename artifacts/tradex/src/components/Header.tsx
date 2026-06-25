@@ -88,21 +88,21 @@ export default function Header() {
                 <span>Jupiter</span>
               </Button>
             </a>
-            <a href="https://tradexeasy.online/game" target="_blank" rel="noopener noreferrer">
+            <Link href="/game">
               <Button className="bg-primary text-primary-foreground hover:bg-primary/90 box-glow-primary gap-2" data-testid="button-launch-app">
                 <Zap className="w-4 h-4" />
                 Play Now — Free
               </Button>
-            </a>
+            </Link>
           </div>
 
           <div className="flex md:hidden items-center gap-2">
-            <a href="https://tradexeasy.online/game" target="_blank" rel="noopener noreferrer">
+            <Link href="/game">
               <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 box-glow-primary text-xs px-3 gap-1.5" data-testid="button-launch-app-mobile">
                 <Zap className="w-3.5 h-3.5" />
                 Play Now
               </Button>
-            </a>
+            </Link>
             <button
               onClick={() => setMenuOpen((o) => !o)}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -180,12 +180,12 @@ export default function Header() {
                     Open Jupiter Wallet
                   </Button>
                 </a>
-                <a href="https://tradexeasy.online/game" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
+                <Link href="/game" onClick={closeMenu}>
                   <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 gap-2 justify-center" data-testid="button-launch-app-drawer">
                     <Zap className="w-4 h-4" />
                     Play Now — Free
                   </Button>
-                </a>
+                </Link>
               </div>
             </motion.div>
           </>
