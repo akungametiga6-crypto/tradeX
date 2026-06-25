@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { SiX, SiSolana } from "react-icons/si";
+import { ExternalLink } from "lucide-react";
 import logoPath from "@assets/a87c8240-7053-4b07-97aa-3f1afaec6e84_1782194174325.png";
 
 export default function Footer() {
@@ -22,7 +23,7 @@ export default function Footer() {
                 href="https://x.com/TradeXeasy"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Follow Founder on X"
+                title="Follow on X"
                 data-testid="link-footer-founder-x"
                 className="w-10 h-10 rounded-full bg-background border border-border/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
               >
@@ -34,31 +35,10 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-6">Platform</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
-              <li>
-                <a
-                  href="https://kickstart.easya.io/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="link-footer-platform"
-                  className="hover:text-primary transition-colors"
-                >
-                  EasyA Kickstart
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://x.com/EasyA_Kickstart"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="link-footer-easya-x"
-                  className="hover:text-primary transition-colors flex items-center gap-2"
-                >
-                  <SiX className="w-3 h-3" />
-                  EasyA Kickstart
-                </a>
-              </li>
+              <li><Link href="/game" className="hover:text-primary transition-colors flex items-center gap-2"><ExternalLink className="w-3 h-3" />Play Now — Free</Link></li>
               <li><a href="#markets" className="hover:text-primary transition-colors">Markets</a></li>
               <li><a href="#features" className="hover:text-primary transition-colors">Features</a></li>
+              <li><a href="#about" className="hover:text-primary transition-colors">About</a></li>
             </ul>
           </div>
 
@@ -82,7 +62,6 @@ export default function Footer() {
                   href="https://x.com/solana"
                   target="_blank"
                   rel="noopener noreferrer"
-                  data-testid="link-footer-solana-x"
                   className="hover:text-primary transition-colors flex items-center gap-2"
                 >
                   <SiX className="w-3 h-3" />
@@ -99,18 +78,9 @@ export default function Footer() {
           <p className="text-xs text-muted-foreground">
             &copy; 2026 TradeX. All rights reserved.
           </p>
-          <div className="text-xs text-muted-foreground flex items-center gap-1">
-            Powered by{" "}
-            <a
-              href="https://kickstart.easya.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-testid="link-footer-easya"
-              className="font-bold text-foreground hover:text-primary transition-colors"
-            >
-              EasyA Kickstart
-            </a>
-          </div>
+          <p className="text-xs text-muted-foreground">
+            Built for serious traders
+          </p>
         </div>
       </div>
     </footer>
