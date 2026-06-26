@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, Send, Bot, ChevronRight, Zap, TrendingUp, Shield, HelpCircle } from "lucide-react";
+import { MessageCircle, X, Send, Bot, Zap, TrendingUp, Shield, HelpCircle } from "lucide-react";
 
 interface Message {
   id: string;
@@ -88,8 +88,6 @@ export default function LiveAgent() {
 
   function handleQuick(label: string) {
     sendMessage(label);
-    const response = AGENT_RESPONSES[label];
-    if (!response) return;
   }
 
   return (
@@ -210,28 +208,50 @@ export default function LiveAgent() {
         )}
       </AnimatePresence>
 
-      <motion.button
-        onClick={() => setOpen((v) => !v)}
-        whileHover={{ scale: 1.07 }}
-        whileTap={{ scale: 0.95 }}
-        className="fixed bottom-6 right-4 sm:right-6 z-50 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-xl box-glow-primary flex items-center justify-center"
-        aria-label="Open live agent"
-      >
-        <AnimatePresence mode="wait">
-          {open ? (
-            <motion.span key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.15 }}>
-              <X className="w-6 h-6" />
-            </motion.span>
-          ) : (
-            <motion.span key="open" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.15 }}>
-              <MessageCircle className="w-6 h-6" />
-            </motion.span>
+      {/* Floating button with label */}
+      <div className="fixed bottom-6 right-4 sm:right-6 z-50 flex flex-col items-end gap-2">
+        <AnimatePresence>
+          {!open && (
+            <motion.div
+              key="label"
+              initial={{ opacity: 0, x: 10 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 10 }}
+              transition={{ duration: 0.2 }}
+              className="flex flex-col items-end"
+            >
+              <div className="bg-card border border-primary/30 rounded-xl px-3 py-2 shadow-lg max-w-[160px] text-right">
+                <p className="text-[11px] font-bold text-primary leading-tight">Agent to easy trade</p>
+                <p className="text-[11px] text-muted-foreground leading-tight">with tradexeasy</p>
+              </div>
+              <div className="w-2 h-2 bg-card border-r border-b border-primary/30 rotate-45 -mt-1 mr-6" />
+            </motion.div>
           )}
         </AnimatePresence>
-        {!open && (
-          <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-green-400 border-2 border-background animate-pulse" />
-        )}
-      </motion.button>
+
+        <motion.button
+          onClick={() => setOpen((v) => !v)}
+          whileHover={{ scale: 1.07 }}
+          whileTap={{ scale: 0.95 }}
+          className="w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-xl box-glow-primary flex items-center justify-center"
+          aria-label="Open live agent"
+        >
+          <AnimatePresence mode="wait">
+            {open ? (
+              <motion.span key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.15 }}>
+                <X className="w-6 h-6" />
+              </motion.span>
+            ) : (
+              <motion.span key="open" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.15 }}>
+                <MessageCircle className="w-6 h-6" />
+              </motion.span>
+            )}
+          </AnimatePresence>
+          {!open && (
+            <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-green-400 border-2 border-background animate-pulse" />
+          )}
+        </motion.button>
+      </div>
     </>
   );
 }
