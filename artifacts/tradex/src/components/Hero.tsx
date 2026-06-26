@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Activity, Zap } from "lucide-react";
+import { Activity, Zap, Bot } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 
@@ -22,11 +22,17 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-medium mb-8"
+          className="flex flex-col sm:flex-row items-center gap-3 mb-8"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-          <Activity className="w-4 h-4" />
-          <span>Live Market Data Active</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-medium">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            <Activity className="w-4 h-4" />
+            <span>Live Market Data Active</span>
+          </div>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-secondary/40 bg-secondary/8 text-secondary text-sm font-medium">
+            <Bot className="w-4 h-4" />
+            <span>Live Agent to easy trade with tradexeasy</span>
+          </div>
         </motion.div>
 
         <motion.h1
