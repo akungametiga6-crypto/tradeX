@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import TradingGame from "@/pages/TradingGame";
+import LiveAgent from "@/components/LiveAgent";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ function App() {
           <Router />
         </WouterRouter>
         <Toaster />
+        <LiveAgent />
       </TooltipProvider>
     </QueryClientProvider>
   );
